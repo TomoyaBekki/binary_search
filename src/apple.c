@@ -3,19 +3,36 @@
 int n;
 int k;
 int A[100000];
+int a;
+
+int p (int m){
+    int i;
+    a = 0;
+    for(i = 0; i<n; i++){
+        a = a + (((A[i] - 1)/ m) + 1);
+    }
+    return a <= k;
+}
+
 
 
 int main(){
   int i, lb, ub;
   scanf("%d%d", &n, &k);
+    lb = 0;
+    ub = 100000;
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
   }
     while(ub - lb > 1){
-        int m = (lb + lu)
-        if(A[m] >= x){ub = m};
-        else {lb = m}
+        int m = (lb + ub) / 2;
+        if(p(m)){
+            ub = m;
+        }
+        else{
+            lb = m;
+        }
     }
-    printf("%d\n",ub)
+    printf("%d\n",ub);
   return 0;
 }
