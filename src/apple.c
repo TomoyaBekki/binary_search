@@ -19,11 +19,23 @@ int p (int m){
 int main(){
   int i, lb, ub;
   scanf("%d%d", &n, &k);
-    lb = 0;
-    ub = 100000;
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
   }
+  int max = A[0];
+  for (i = 0; i < n ; i++) {
+    if (max < A[i]) {
+        max = A[i];
+    }
+    }
+    int min = A[0];
+  for (i = 0; i < n ; i++) {
+    if (min > A[i]) {
+        min = A[i];
+    }
+    }
+    lb = min-1;
+    ub = max;
     while(ub - lb > 1){
         int m = (lb + ub) / 2;
         if(p(m)){
