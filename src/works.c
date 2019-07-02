@@ -3,22 +3,22 @@
 int n;
 int k;
 int A[100000];
-int a;
 int b = 0;
 
 
-int p (int m){
-    int i;
-    int j;
-    int h = 0;
-    for (i = 0; h <= n; i++){
-        a = 0;
-        for(j = h; a <= m && j < n; j++){
-            a = a + A[j];
+int p(int m){
+    int i, a, j;
+    a = 0;
+    j = 1;
+    for(i = 0; i < n; i++){
+        if(A[i] > m) return 0;
+        if(a + A[i] <= m) a += A[i];
+        else {
+            j++;
+            a = A[i];
         }
-        h = j +1;
     }
-    return i < k;
+    return j <= k;
 }
 
 int main(){

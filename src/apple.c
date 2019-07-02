@@ -28,13 +28,7 @@ int main(){
         max = A[i];
     }
     }
-    int min = A[0];
-  for (i = 0; i < n ; i++) {
-    if (min > A[i]) {
-        min = A[i];
-    }
-    }
-    lb = min-1;
+    lb = 0;
     ub = max;
     while(ub - lb > 1){
         int m = (lb + ub) / 2;
